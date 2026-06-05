@@ -69,3 +69,32 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
+const form = document.getElementById("contactForm");
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = form.email.value.trim();
+
+    if (!email.match(/^[a-zA-Z0-9._%+-]+@gmail\.com$/)) {
+        alert("Please enter a valid Gmail address!");
+        return;
+    }
+
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            Accept: "application/json"
+        }
+    });
+
+    if (response.ok) {
+        alert("Message Sent Successfully!");
+        form.reset();
+    } else {
+        alert("Message not sent!");
+    }
+});

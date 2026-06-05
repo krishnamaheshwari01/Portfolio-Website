@@ -329,11 +329,21 @@
 
             <div class="social-icons">
 
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <div class="social-icons">
 
-                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/krishna-maheshwari-a03009385/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+                </a>
 
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/KrishnaMaheshwari01" target="_blank">
+                <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://www.instagram.com/ig__krishnaa__/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                </div>
 
             </div>
 
@@ -345,13 +355,16 @@
 
             <h2>Send Message</h2>
 
-            <input type="text" placeholder="Your Name">
+            <form id="contactForm" action="https://formspree.io/f/xjgzdkon" method="POST">
 
-            <input type="email" placeholder="Your Email">
+            <input type="text" name="name" placeholder="Your Name" required>
 
-            <textarea placeholder="Your Message"></textarea>
+            <input type="email" name="email" placeholder="Your Email" required>
 
-            <button>Send Message</button>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+
+            <button type="submit">Send Message</button>
+            </form>
 
         </div>
 
