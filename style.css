@@ -91,7 +91,7 @@ body{
 /* HOME SECTION */
 
 .portfolio-container{
-
+    overflow:hidden;
     min-height:100vh;
     width:100%;
 
@@ -111,7 +111,7 @@ body{
 
 .left-container{
 
-    width:70%;
+    flex:1;
 
     background:#262525;
 
@@ -163,7 +163,7 @@ body{
 
 .content .intro{
 
-    font-size:1.5rem;
+    font-size:clamp(1rem,3vw,1.5rem);
 
     color:white;
 }
@@ -264,14 +264,14 @@ body{
 
 .circle:nth-child(1){
 
-    width:min(38rem, 45vw);
+    width:clamp(220px,40vw,600px);
 
     background:linear-gradient(90deg,transparent 50%,#262525 50%);
 }
 
 .circle:nth-child(2){
 
-    width:min(30rem, 35vw);
+    width:clamp(180px,30vw,480px);
 
     background-image:url("image/WhatsApp Image 2026-05-25 at 21.09.04 (2).jpeg");
 
@@ -570,7 +570,7 @@ body{
 
     position:relative;
 
-    width:320px;
+    width:min(320px,100%);
     height: 400px;
     padding:1.5rem;
 
@@ -679,7 +679,7 @@ body{
 .contact-card,
 .contact-form{
     flex: 1;
-    min-width: 420px;
+    min-width: 300px;
     max-width: 620px;
     min-height:320px;
 
@@ -1076,4 +1076,116 @@ img{
 }
 #contact .section-title{
     margin-bottom:0.5rem;
+}
+@media (max-width: 992px){
+
+    .portfolio-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .left-container,
+    .right-container{
+        width:100%;
+    }
+
+    .left-container{
+        padding:2rem;
+        flex-direction:column;
+        justify-content:center;
+        text-align:center;
+    }
+
+    .content{
+        margin-left:0;
+        max-width:700px;
+    }
+
+    .icons{
+        flex-direction:row;
+        justify-content:center;
+        margin-bottom:2rem;
+    }
+
+    .right-container{
+    width:100%;
+    min-height:350px;
+    height:350px;
+    position:relative;
+    background:#262525;
+    overflow:hidden;
+}
+
+    .design .circle{
+    left:50%;
+    top:45%;
+    transform:translate(-50%,-50%);
+}
+
+    .circle:nth-child(1){
+        width: 260px;
+    }
+
+    .circle:nth-child(2){
+        width: 210px;
+    }
+
+    .about-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .contact-card,
+    .contact-form{
+        min-width:100%;
+    }
+}
+
+@media (max-width:768px){
+
+    .navlist{
+        gap:1rem;
+        flex-wrap:wrap;
+        height:auto;
+        padding:1rem;
+    }
+
+    .content h1{
+        font-size:clamp(2.5rem, 6vw, 4.5rem);
+    }
+
+    .section-title h1{
+        font-size:2.5rem;
+    }
+
+    .project-card,
+    .work-card{
+        width:100%;
+        max-width:350px;
+    }
+
+    .btn-container{
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:1rem;
+    }
+
+    .btn-container button:last-child{
+        margin-left:0;
+    }
+    .navlist{
+    gap:.8rem;
+    }
+
+    .navlist li a{
+    font-size:.9rem;
+    }
+        .info-box{
+        flex-wrap:wrap;
+    }
+
+    .info-box span{
+        font-size:0.9rem;
+        word-break:break-all;
+    }
 }
